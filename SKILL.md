@@ -1,7 +1,7 @@
 ---
 name: webnovel-assistant
 license: MIT
-description: "长篇网文人机共创：一起扫榜拆书、构思想法、滚动规划大纲、设计剧情与情绪、接力写作、改稿及维护跨卷记忆。支持作者独写和共同写正文，作者决定采用与定稿；适用于开书、连载、卡文讨论和章节评审。"
+description: "长篇网文人机共创：真实榜单查询与历史比较、共同拆书、构思想法、滚动规划大纲、剧情与情绪设计、接力写作、改稿及跨卷记忆。支持作者独写和共同写正文，作者决定采用与定稿；适用于扫榜、开书、连载、卡文和章节评审。"
 ---
 
 # 网文共创助手
@@ -30,7 +30,7 @@ description: "长篇网文人机共创：一起扫榜拆书、构思想法、滚
 
 | 模式与常见请求 | 工作与最小交付 | 按需读取 |
 |---|---|---|
-| 扫榜拆书：“一起扫榜”“看看怎么写” | 核实榜单样本，结合作者阅读感受比较开篇、剧情、情绪与兑现，形成候选启发 | [扫榜与拆书](references/market-reading.md)、[拆书卡](assets/templates/02-拆书卡.md) |
+| 扫榜拆书：“一起扫榜”“比较榜单变化”“找对标”“看看怎么写” | 按目的查询真实样本，核实日期与覆盖；有可比快照时分析变化，有正文时共同拆书，形成原创候选 | [扫榜与拆书](references/market-reading.md)；实际查询/导入/比较时读 [榜单数据](references/rank-data.md)，按需用 [扫榜观察单](assets/templates/10-扫榜观察单.md) 或 [拆书卡](assets/templates/02-拆书卡.md) |
 | 开书规划：“构思想法”“讨论大纲/卷纲” | 共同探索故事核；近章详细、当前故事段抓节点、远期留方向与备选，形成所请求层级的计划 | [开书与滚动规划](references/author-workflow.md#开书与滚动规划)、[定位卡](assets/templates/01-开书定位卡.md) |
 | 构思设计：“卡文”“设计剧情/情绪” | 结合人物选择、信息和资源讨论走法，将目标情绪落实为事件与兑现 | [剧情与情绪设计](references/author-workflow.md#剧情与情绪设计)、[故事段卡](assets/templates/08-故事段与情绪设计卡.md) |
 | 写前准备：“准备第N章” | 读取本章计划、相关状态、上章结尾、伏笔及文风，整理写作依据和停止点 | [写前准备](references/author-workflow.md#写前准备)、[准备卡](assets/templates/03-章节准备卡.md) |
@@ -50,6 +50,8 @@ description: "长篇网文人机共创：一起扫榜拆书、构思想法、滚
 ## 可选：接入其他写作系统
 
 本 skill 可独立进行文档共创，不依赖其他插件、数据库或个人知识库。
+
+实际扫榜使用宿主可用的搜索、网页/浏览器阅读、本地材料或作者已授权的数据服务；本 skill 不自带全平台榜单数据库或固定采集器。先核实来源能力，完整记录与阅读摘要分别保留；具体路由见 [榜单数据](references/rank-data.md)。
 
 - 使用 webnovel-writer 命令，或项目含 `.story-system/`、`.webnovel/` 时，读 [webnovel-writer 接入边界](references/webnovel-writer-integration.md)。
 - 使用 Oh Story 命令，或项目含 `.story-deployed`、`追踪/_tracking-state.json` 时，读 [Oh Story 接入边界](references/oh-story-integration.md)。

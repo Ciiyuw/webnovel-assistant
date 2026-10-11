@@ -2,7 +2,7 @@
 
 服务于长篇网文人机共创。双方共同扫榜、构思、设计剧情与情绪，也可以接力写正文；作者决定采用与定稿，AI 主动提出走法、检查和维护跨卷档案。
 
-这是一个采用 [Agent Skills 格式](https://agentskills.io/specification) 的技能包，可供 Claude Code、Codex、Cursor 和 OpenCode 使用。无需 API Key、数据库或外部知识库。`webnovel-writer` 与 Oh Story 是可选集成。
+这是一个采用 [Agent Skills 格式](https://agentskills.io/specification) 的技能包，可供 Claude Code、Codex、Cursor 和 OpenCode 使用。基础文档共创无需 API Key、数据库或外部知识库。实际扫榜使用宿主可用的搜索、网页/浏览器阅读、作者提供的文件或已授权数据服务，覆盖范围按真实来源确定。`webnovel-writer` 与 Oh Story 是可选集成。
 
 ## 安装
 
@@ -60,7 +60,8 @@ git clone https://github.com/Ciiyuw/webnovel-assistant.git ~/.config/opencode/sk
 
 | 时机 | 可以这样说 |
 |---|---|
-| 扫榜拆书 | “一起看这个平台的同类作品，区分真实榜单数据、文本观察与我们的取舍。” |
+| 扫榜拆书 | “查这个平台的同类新书榜，注明数据日期、出处和覆盖，再选作品共同拆书。” |
+| 榜单变化 | “比较这两份同口径快照，区分指标变化、名次变化和进入/退出可见样本。” |
 | 开新书 | “一起构思故事核、读者体验与可持续写作的方向。” |
 | 卡文 | “主角现在有这些信息和资源，讨论三种走法与后续代价。” |
 | 写前准备 | “准备第 12 章，整理承接、人物知识边界和本章目标，我来写正文。” |
@@ -82,13 +83,16 @@ webnovel-assistant/
 ├── references/
 │   ├── author-workflow.md           # 共创、滚动规划、剧情与情绪
 │   ├── market-reading.md            # 扫榜与共同拆书
+│   ├── rank-data.md                 # 获取、查询、快照与历史比较
 │   ├── project-records.md           # 分卷记忆、事实与版本
 │   ├── webnovel-writer-integration.md
 │   └── oh-story-integration.md
-└── assets/templates/                # 九份可裁剪模板
+└── assets/templates/                # 十份可裁剪模板
 ```
 
-九份模板覆盖开书定位、拆书、章节准备、AI 协作约定、稿件验收与事实结转、发布反馈、周期复盘、故事段与情绪设计、卷末交接。AI 根据对话和材料整理，作者无需填满每张表。仅在任务需要时加载对应参考与模板。
+十份模板覆盖开书定位、拆书、章节准备、AI 协作约定、稿件验收与事实结转、发布反馈、周期复盘、故事段与情绪设计、卷末交接及扫榜观察。AI 根据对话和材料整理，作者无需填满每张表。仅在任务需要时加载对应参考与模板。
+
+扫榜按找方向、找对标、查作品、看变化或准备拆书选择材料。使用 [榜单数据获取与比较](references/rank-data.md) 核对日期、筛选、分页与指标口径；按需保存 [扫榜观察单](assets/templates/10-扫榜观察单.md)。只有同口径历史快照才比较变化，只有实际可读正文才分析具体开局与剧情。
 
 ## 创作与事实边界
 
